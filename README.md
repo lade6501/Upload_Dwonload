@@ -1,17 +1,20 @@
-# course-frontend
-This is the frontend repo of course project where people can expoler differnet courses and enroll 
-to those coursese.                                                                                                                                       
-I'm using Vite+React framework to build frontend and then running it on docker container.                                                                 
-For backed I'm using NodeJs and for database using mongodb both running  on docker container.                                                             
-View backend repo here https://github.com/lade6501/course-backend
+# upload_download
 
-# Some of the core features 
-  * View courses
-  * Enroll to course 
-  * Login
-  * Profile modification 
+This is the frontend repo of upload_download project where
+I'm trying to learn how we can upload and download files from database
+using node js api's and react as frontend.  
+I'm using Vite+React framework to build frontend
+For backed I'm using NodeJs and for database using mongodb atlas
 
-# Features to be added in near future 
-  * ~~Password check~~
-  * Email verification
-  * Ability to watch courses 
+View backend repo here soon to be created
+
+# Some of the core features
+
+- View Files
+- Upload Files
+- Download Files
+
+# Features to be added in near future
+
+- Filter base on size
+- Filter base on file type
