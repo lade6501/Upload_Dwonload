@@ -1,0 +1,8 @@
+.tableHead {
+  margin-top: 1.5rem;
+}
+#table {
+  width: 95%;
+  margin-left: 2rem;
+  border: solid 2px black;
+}
