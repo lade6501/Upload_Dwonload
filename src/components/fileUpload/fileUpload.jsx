@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./fileUpload.css";
+import FileTable from "../fileTable/fileTable";
 
 const FileUpload = () => {
   const [file, setFile] = useState();
@@ -63,6 +64,8 @@ const FileUpload = () => {
           Upload
         </button>
       </form>
+
+      <FileTable files={files} />
     </>
   );
 };
