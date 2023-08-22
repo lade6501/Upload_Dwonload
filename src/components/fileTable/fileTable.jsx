@@ -1,7 +1,9 @@
 import React from "react";
 import "./fileTable.css";
+import mime from "mime-types";
+import byte from "byte-size";
 
-const FileTable = () => {
+const FileTable = ({ files }) => {
   return (
     <>
       <h1 className="tableHead">Recent Files</h1>
@@ -17,6 +19,26 @@ const FileTable = () => {
             <th>Delete</th>
           </tr>
         </thead>
+        <tbody>
+          {files.map((file, index) => {
+            return (
+              <tr key={index}>
+                <td>{file.filename}</td>
+                <td>{`To be added`}</td>
+                <td>{`${byte(file.length)}`}</td>
+                <td>
+                  <i className="fa-solid fa-eye"></i>
+                </td>
+                <td>
+                  <i className="fa-solid fa-download"></i>
+                </td>
+                <td>
+                  <i className="fa-solid fa-trash"></i>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
