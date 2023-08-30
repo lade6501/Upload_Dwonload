@@ -1,9 +1,10 @@
 import React from "react";
 import "./fileTable.css";
-import mime from "mime-types";
+import mime from "mime";
 import byte from "byte-size";
 
 const FileTable = ({ files }) => {
+  console.log(files);
   return (
     <>
       {files.length == 0 ? (
@@ -28,7 +29,7 @@ const FileTable = ({ files }) => {
                 return (
                   <tr key={index}>
                     <td>{file.filename}</td>
-                    <td>{`To be added`}</td>
+                    <td>{`${mime.getType(file.filename)}`}</td>
                     <td>{`${byte(file.length)}`}</td>
                     <td>
                       <i className="fa-solid fa-eye"></i>
