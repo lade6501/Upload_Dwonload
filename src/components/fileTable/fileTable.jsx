@@ -5,6 +5,19 @@ import byte from "byte-size";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const FileTable = ({ files }) => {
+  const handledelete = (id) => {
+    fetch(`http://localhost:8005/api/v1/file/${id}`, {
+      method: "delete",
+    })
+      .then(async (res) => {
+        const data = await res.json();
+        alert(data.message);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <>
       {files.length == 0 ? (
@@ -65,7 +78,10 @@ const FileTable = ({ files }) => {
                       <i className="fa-solid fa-download"></i>
                     </td>
                     <td>
-                      <i className="fa-solid fa-trash"></i>
+                      <i
+                        className="fa-solid fa-trash"
+                        onClick={() => handledelete(file._id)}
+                      ></i>
                     </td>
                   </tr>
                 );
