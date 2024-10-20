@@ -6,7 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 const FileTable = ({ files }) => {
   const handledelete = (id) => {
-    fetch(`http://localhost:8005/api/v1/file/${id}`, {
+    fetch(`https://upload-dwonload-backend.onrender.com/api/v1/file/${id}`, {
       method: "delete",
     })
       .then(async (res) => {

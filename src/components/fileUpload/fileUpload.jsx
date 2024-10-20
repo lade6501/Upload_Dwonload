@@ -12,7 +12,7 @@ const FileUpload = () => {
 
   //Calling api to get all uploaded files from DB
   const getFiles = () => {
-    fetch("http://localhost:8005/api/v1/files")
+    fetch("https://upload-dwonload-backend.onrender.com/api/v1/files")
       .then(async (res) => {
         const data = await res.json();
         setFiles(data);
@@ -24,10 +24,14 @@ const FileUpload = () => {
 
   //Calling an api to upload file to DB
   const upload = () => {
+    if (!file) {
+      alert("Select a file to upload");
+      return;
+    }
     const data = new FormData();
     data.append("file", file);
 
-    fetch("http://localhost:8005/api/v1/upload", {
+    fetch("https://upload-dwonload-backend.onrender.com/api/v1/upload", {
       method: "post",
       body: data,
     })
